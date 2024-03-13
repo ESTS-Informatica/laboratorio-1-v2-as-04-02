@@ -5,12 +5,22 @@ public class WordGuessingGame {
     private String guessedWord;
     private int numberOfTries;
     private InputReader reader;
+    private WordGenerator generator;
 
     public WordGuessingGame() {
         this.hiddenWord = "abc";
         this.guessedWord = "___";
         this.numberOfTries = 0;
-        reader = new InputReader();
+        this.generator = new WordGenerator();
+        this.reader = new InputReader();
+        this.hiddenWord = generator.generateWord();
+    }
+    public void initializeGuessedWord(){
+        StringBuilder builder = new StringBuilder();
+        for(int j = 0; j < hiddenWord.length(); j++) {
+            builder.append("_");
+        }
+        guessedWord = builder.toString();
     }
 
     public String getHiddenWord(){

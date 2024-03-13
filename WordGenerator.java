@@ -3,9 +3,10 @@ import java.util.Random;
 
 public class WordGenerator {
     private ArrayList<String> words;
+    private static Random random = new Random();
     public WordGenerator(){
         ArrayList<String> words = new ArrayList<>();
-        Random random = new Random();
+        fillArrayList();
     }
     public void fillArrayList(){
         words.add("boolean");
